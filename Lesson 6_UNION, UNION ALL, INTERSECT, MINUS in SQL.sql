@@ -1,12 +1,12 @@
--- UNION/ UNION ALL , INTERSECT , MINUS
+-- UNION/ UNION ALL, INTERSECT, MINUS
 	-- Two tables
-    -- 1) UNION - Combine them, remove duplications. 
-    -- 2) UNION ALL - Combine them, without removing duplications.
-    -- 3)  INTERSECT - Display the Common /duplicate the records.
+    -- 1) UNION - Combine them, remove duplicates. 
+    -- 2) UNION ALL - Combine them, without removing duplicates.
+    -- 3)  INTERSECT - Display the Common /duplicates records.
     -- 4) MINUS - if t1 minus t2, then the values the presented in t1 and not present in t2.
  
  -- Note: 
-	-- both select statements must have same number of columns with similar data types, and similar order.
+	-- Both select statements must have the same number of columns with similar data types, and similar order.
  
 -- 1. UNION/ UNION ALL  
 select orderNumber from orderdetails union select orderNumber from orders; -- 326 rows
