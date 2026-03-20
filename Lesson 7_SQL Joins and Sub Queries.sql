@@ -1,4 +1,4 @@
--- Join help to -> retrieve data form two or more database tables.
+-- Join helps to -> retrieve data from two or more database tables.
 -- Note: The tables are mutually related using primary and foreign keys.
 -- Note: tables start with the key column
 -- types of joins
@@ -65,7 +65,7 @@ ON Student.sid = Course.sid; -- all students roll a course/ don't.
 SELECT Student.sNAME, Course.COURSE_ID 
 FROM Student
 RIGHT JOIN Course 
-ON Student.sid = Course.sid; -- all couses that are rolled/ not.
+ON Student.sid = Course.sid; -- all courses that are rolled/ not.
 
 -- 4. FULL JOIN
 -- SELECT Student.SNAME, Course.COURSE_ID FROM Student FULL JOIN Course ON Student.sid = Course.sid;
@@ -74,7 +74,7 @@ ON Student.sid = Course.sid; -- all couses that are rolled/ not.
 -- The UNION operator merges the results of two SELECT statements and removes duplicate rows.
 
 -- 5. SELF JOIN
--- is a regular join, but the table is joined with itself or different table.
+-- is a regular join, but the table is joined with itself or a different table.
 
 SELECT S.SNAME, C.COURSE_ID 
 FROM Student s, Course c WHERE s.sid = c.sid;
@@ -84,7 +84,7 @@ FROM Student s, Course c WHERE s.sid = c.sid;
 -- Sub query [nested query]
 
 -- Query within a query, inner query & outer query.
--- The output of inner query is become input of outer query.
+-- The output of the inner query becomes the input of the outer query.
 -- 2 Types of sub queries:
     -- 1) Single row sub query < = , > = , ! =
     -- 2) Multirow sub query [ IN, ANY, ALL ]
@@ -124,11 +124,11 @@ SELECT productName, buyPrice FROM products WHERE buyPrice = ANY (SELECT priceEac
 -- ALL 
 -- returns a boolean value as a result
 -- returns TRUE if ALL of the subquery values meet the condition
--- is used with SELECT, WHERE and HAVING statements
+-- is used with SELECT, WHERE, and HAVING statements
 
 SELECT productName, buyPrice FROM products WHERE buyPrice > ALL (SELECT priceEach FROM orderdetails WHERE productCode = 'S10_1678');
 -- buyPrice > ALL (list)
--- Give me the products that are priced higher than (highest value) on the list.
--- highest than all values of the list
+-- Give me the products that are priced higher than (the highest value) on the list.
+-- higher than all values of the list
 
 SELECT productName, buyPrice FROM products WHERE buyPrice < ALL (SELECT priceEach FROM orderdetails WHERE productCode = 'S10_1678');
